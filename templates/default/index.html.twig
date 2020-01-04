@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% import 'components/_icons.html.twig' as icons %}
+
+{% block body %}
+    <div class="content">
+        <div class="top">
+            <a id="facebook" href="https://www.facebook.com/romain.monteil" title="{{ 'social.facebook'|trans }}"
+               target="_blank">
+                {{ icons.facebook }}
+            </a>
+        </div>
+        <div class="middle">
+            <a id="twitter" href="https://twitter.com/ker0x" title="{{ 'social.twitter'|trans }}" target="_blank">
+                {{ icons.twitter}}
+            </a>
+            <a id="instagram" href="https://www.instagram.com/keyr0x/" title="{{ 'social.instagram'|trans }}"
+               target="_blank">
+                {{ icons.instagram }}
+            </a>
+        </div>
+        <div class="bottom">
+            <a id="github" href="https://github.com/ker0x" title="{{ 'social.github'|trans }}" target="_blank">
+                {{ icons.github }}
+            </a>
+            <a id="linkedin" href="https://www.linkedin.com/in/romain-monteil-a30825b6"
+               title="{{ 'social.linkedin'|trans }}" target="_blank">
+                {{ icons.linkedin }}
+            </a>
+        </div>
+    </div>
+{% endblock %}
