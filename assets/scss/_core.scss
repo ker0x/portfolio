@@ -17,7 +17,7 @@ body {
 }
 
 .content {
-  width: 144px;
+  width: 192px;
 
   > div {
     display: flex;
@@ -39,6 +39,7 @@ body {
       justify-content: center;
       border-radius: 50%;
       transition: .7s;
+      margin: 5px;
 
       &:hover {
         background: $yellow;
