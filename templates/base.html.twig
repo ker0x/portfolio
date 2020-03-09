@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="{{ app.request.locale }}">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="description" content="{{ 'app.meta.description'|trans }}">
-        <meta name="author" content="Romain Monteil">
-        <title>{% block title %}{{ 'app.title'|trans }}{% endblock %}</title>
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </body>
+<head>
+    <title>{% block title %}{{ 'app.title'|trans }}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="{{ 'app.meta.description'|trans }}">
+    <meta name="author" content="Romain Monteil">
+    <meta property="og:title" content="{{ 'app.title'|trans }}">
+    <meta property="og:description" content="{{ 'app.meta.description'|trans }}">
+    <meta property="og:url" content="{{ url('app_index') }}">
+    <meta property="og:site_name" content="{{ 'app.title'|trans }}">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+{% block body %}{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
 </html>
