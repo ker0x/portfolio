@@ -1,0 +1,20 @@
+name: CI
+
+on: [pull_request]
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Assets
+        run: |
+          yarn install --pure-lockfile
+          yarn build
+
+      - name: PHPUnit
+        uses: docker://jakzal/phpqa:php7.3-alpine
+        with:
+          args: phpunit
