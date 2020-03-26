@@ -1,15 +1,22 @@
+{% set current_route = app.request.attributes.get('_route') %}
+{% set current_route_params = app.request.attributes.get('_route_params') %}
+{% set current_locale = app.request.locale %}
+
 <!DOCTYPE html>
-<html lang="{{ app.request.locale }}">
+<html lang="{{ current_locale }}">
 <head>
     <title>{% block title %}{{ 'app.title'|trans }}{% endblock %}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="{{ 'app.meta.description'|trans }}">
+    <meta name="description" content="{% block meta_description %}{{ 'app.meta.description'|trans }}{% endblock %}">
     <meta name="author" content="Romain Monteil">
-    <meta property="og:title" content="{{ 'app.title'|trans }}">
-    <meta property="og:description" content="{{ 'app.meta.description'|trans }}">
-    <meta property="og:url" content="{{ url('app_index') }}">
+
+    <meta property="og:type" content="website" />
     <meta property="og:site_name" content="{{ 'app.title'|trans }}">
+    <meta property="og:title" content="{{ block('title') }}">
+    <meta property="og:description" content="{{ block('meta_description') }}">
+    <meta property="og:url" content="{{ block('meta_canonical') }}">
+
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ asset('build/images/favicon/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
@@ -26,9 +33,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('build/images/favicon/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('build/images/favicon/favicon-96x96.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('build/images/favicon/favicon-16x16.png') }}">
+
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
+
+    <link rel="canonical" href="{% block meta_canonical current_route ? url(current_route, current_route_params) : '' %}" />
 </head>
 <body>
 {% block body %}{% endblock %}

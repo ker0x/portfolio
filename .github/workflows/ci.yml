@@ -1,20 +1,33 @@
 name: ci
 
-on: [pull_request]
+on:
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
 
 jobs:
   tests:
-    name: Tests
+    name: tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+        - 
+      - name: validate
+        run: composer validate
 
-      - name: Assets
+      - name: composer
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: yarn
         run: |
           yarn install --pure-lockfile
           yarn build
 
-      - name: PHPUnit
+      - name: phpunit
         uses: docker://jakzal/phpqa:php7.3-alpine
         with:
           args: phpunit

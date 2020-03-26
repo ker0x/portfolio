@@ -1,0 +1,45 @@
+; top-most EditorConfig file
+root = true
+
+; Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.{scss,js,json,xlf,yaml,yml}]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.neon]
+indent_style = tab
+
+[*.sh]
+indent_style = tab
+
+[*.{yaml,yml}]
+trim_trailing_whitespace = false
+
+[.gitmodules]
+indent_style = tab
+
+[.php_cs{,.dist}]
+indent_style = space
+indent_size = 4
+
+[docker-compose{,.override}.{yaml,yml}]
+indent_style = space
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+
+[phpunit.xml{,.dist}]
+indent_style = space
+indent_size = 4
+
