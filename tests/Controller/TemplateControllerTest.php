@@ -13,7 +13,7 @@ class TemplateControllerTest extends WebTestCase
         $client = static::createClient();
         $crawler = $client->request('GET', '/');
 
-        $this->assertResponseIsSuccessful();
-        $this->assertCount(5, $crawler->filter('a'));
+        self::assertResponseIsSuccessful();
+        self::assertCount(5, $crawler->filter('a'));
     }
 }
