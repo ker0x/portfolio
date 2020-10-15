@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
-      <trans-unit id="f3U2Gqw" resname="app.title">
+      <trans-unit id="rujVJ3G" resname="app.title">
         <source>app.title</source>
         <target>Romain Monteil | Portfolio</target>
       </trans-unit>
@@ -32,6 +32,18 @@
       <trans-unit id="_Bj4qss" resname="social.linkedin">
         <source>social.linkedin</source>
         <target>Linkedin</target>
+      </trans-unit>
+      <trans-unit id="xe_HYuo" resname="app.footer.text">
+        <source>app.footer.text</source>
+        <target>Réalisé avec {symfony} et {boostrap}, code disponible sur {github}</target>
+      </trans-unit>
+      <trans-unit id="5DYVCyt" resname="app.open_source.title">
+        <source>app.open_source.title</source>
+        <target>Open Source</target>
+      </trans-unit>
+      <trans-unit id="8NrvWJ2" resname="app.open_source.text">
+        <source>app.open_source.text</source>
+        <target>Depuis 2013, je contribue à différents projets open source en tant que mainteneur ou simple contributeur. Voici une liste de certains des mes projets.</target>
       </trans-unit>
     </body>
   </file>

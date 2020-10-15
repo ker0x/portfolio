@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="xe_HYuo" resname="app.footer.text">
+        <source>app.footer.text</source>
+        <target>Build with {symfony} and {boostrap}, code available on {github}</target>
+      </trans-unit>
+      <trans-unit id="rujVJ3G" resname="app.title">
+        <source>app.title</source>
+        <target>Romain Monteil | Portfolio</target>
+      </trans-unit>
+      <trans-unit id="nosT8vu" resname="app.meta.description">
+        <source>app.meta.description</source>
+        <target>Developer, gamer, film enthusiast and post-rock lover!</target>
+      </trans-unit>
+      <trans-unit id="5DYVCyt" resname="app.open_source.title">
+        <source>app.open_source.title</source>
+        <target>Open Source</target>
+      </trans-unit>
+      <trans-unit id="8NrvWJ2" resname="app.open_source.text">
+        <source>app.open_source.text</source>
+        <target>Since 2013, I contribute to different open source projects. Here is a list of some of the projects I maintain.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

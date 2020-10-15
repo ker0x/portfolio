@@ -1,33 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% import 'components/_icons.html.twig' as icons %}
+{% import 'components/_brands.html.twig' as brands %}
 
 {% block body %}
-    <div class="content">
-        <div class="top">
-            <a id="github" href="https://github.com/ker0x" title="{{ 'social.github'|trans }}" target="_blank">
-                {{ icons.github }}
-            </a>
+    <header class="header bg-dark text-white text-center py-5">
+        <div class="container d-flex align-items-center flex-column">
+            <img src="{{ app_asset_image('myself.jpg', {
+                'w': 300,
+                'h': 300,
+                'fit': 'crop-center'
+            }) }}" alt="">
+            <h2>{{ 'app.meta.description'|trans }}</h2>
+            <ul class="list-inline social-pro">
+                <li class="list-inline-item"><a href="https://github.com/ker0x">{{ brands.github() }}</a></li>
+                <li class="list-inline-item"><a href="#">{{ brands.linkedin() }}</a></li>
+                <li class="list-inline-item"><a href="#">{{ brands.twitter() }}</a></li>
+            </ul>
         </div>
-        <div class="middle">
-            <a id="linkedin" href="https://www.linkedin.com/in/romain-monteil-a30825b6"
-               title="{{ 'social.linkedin'|trans }}" target="_blank">
-                {{ icons.linkedin }}
-            </a>
-            <a id="twitter" href="https://twitter.com/ker0x" title="{{ 'social.twitter'|trans }}" target="_blank">
-                {{ icons.twitter}}
-            </a>
-            <a id="instagram" href="https://www.instagram.com/keyr0x/" title="{{ 'social.instagram'|trans }}"
-               target="_blank">
-                {{ icons.instagram }}
-            </a>
+    </header>
+    <section class="container-fluid bg-white py-5">
+        <div id="open-source" class="row">
+            <div class="col-3 d-flex align-items-center">
+                <h2>{{ brands.github() }} {{ 'app.open_source.title'|trans }}</h2>
+                <p>{{ 'app.open_source.text'|trans }}</p>
+            </div>
+            <div class="col-8 offset-1">
+                <div class="row row-cols-2 g-3">
+                    {% for repository in repositories %}
+                        <div class="col mb-3">
+                            {% include 'elements/_repository.html.twig' %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-        <div class="bottom">
-            <a id="facebook" href="https://www.facebook.com/romain.monteil" title="{{ 'social.facebook'|trans }}"
-               target="_blank">
-                {{ icons.facebook }}
-            </a>
-
+    </section>
+    <footer class="footer bg-white text-center py-5">
+        <div class="container">
+            <small>
+                {{ 'app.footer.text'|trans({
+                    '{symfony}': '<a href="https://symfony.com">' ~ brands.symfony() ~ '</a>',
+                    '{boostrap}': '<a href="https://getbootstrap.com">' ~ brands.bootstrap() ~ '</a>',
+                    '{github}': '<a href="https://github.com/ker0x/portfolio">' ~ brands.github() ~ '</a>'
+                })|raw }}
+            </small>
         </div>
-    </div>
+    </footer>
 {% endblock %}
