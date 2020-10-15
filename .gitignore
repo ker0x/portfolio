@@ -21,6 +21,11 @@ yarn-error.log
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
+###> friendsofphp/php-cs-fixer ###
+/.php_cs
+/.php_cs.cache
+###< friendsofphp/php-cs-fixer ###
+
 ###> kerox/portfolio ###
 /build/
 /.php_cs.cache

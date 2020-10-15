@@ -17,6 +17,14 @@ framework:
     php_errors:
         log: true
 
+    http_client:
+        scoped_clients:
+            github_client:
+                base_uri: 'https://api.github.com'
+                headers:
+                    Accept: 'application/vnd.github.v4+json'
+                    Authorization: 'bearer %env(GITHUB_ACCESS_TOKEN)%'
+
 when@test:
     framework:
         test: true
