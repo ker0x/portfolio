@@ -6,7 +6,7 @@
         <img src="https://img.shields.io/badge/php-%3E%3D%207.3-8892BF.svg?style=for-the-badge" alt="Minimum PHP Version">
     </a>
     <a href="https://symfony.com/" title="Symfony Version">
-        <img src="https://img.shields.io/badge/symfony-%3E%3D%205.1-8E518D.svg?style=for-the-badge" alt="Symfony Version">
+        <img src="https://img.shields.io/badge/symfony-%3E%3D%205.1-000000.svg?style=for-the-badge" alt="Symfony Version">
     </a>
 </div>
 
