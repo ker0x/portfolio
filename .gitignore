@@ -2,7 +2,6 @@
 /.env.local
 /.env.local.php
 /.env.*.local
-/build/
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
@@ -21,3 +20,7 @@ yarn-error.log
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+
+###> kerox/portfolio ###
+/build/
+###< kerox/portfolio ###
