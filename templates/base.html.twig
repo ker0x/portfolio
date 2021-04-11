@@ -38,12 +38,13 @@
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
     <link rel="canonical" href="{% block meta_canonical current_route ? url(current_route, current_route_params) : '' %}" />
 </head>
 <body>
 {% block body %}{% endblock %}
-{% block javascripts %}
-    {{ encore_entry_script_tags('app') }}
-{% endblock %}
 </body>
 </html>

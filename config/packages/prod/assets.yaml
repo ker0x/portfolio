@@ -1,0 +1,4 @@
+framework:
+  assets:
+    base_urls: 'https://portfolio-dev-eu-west-3-6rwlxnj8r9.s3.eu-west-3.amazonaws.com'
+    json_manifest_path: 'https://portfolio-dev-eu-west-3-6rwlxnj8r9.s3.eu-west-3.amazonaws.com/build/manifest.json'

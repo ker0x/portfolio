@@ -22,5 +22,6 @@ yarn-error.log
 ###< symfony/phpunit-bridge ###
 
 ###> kerox/portfolio ###
+/.serverless/
 /build/
 ###< kerox/portfolio ###

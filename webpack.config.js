@@ -1,4 +1,4 @@
-var Encore = require('@symfony/webpack-encore');
+const Encore = require('@symfony/webpack-encore');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -71,13 +71,6 @@ Encore
   // uncomment if you're having problems with a jQuery plugin
   //.autoProvidejQuery()
 
-  // uncomment if you're having problems with a jQuery plugin
-  //.autoProvidejQuery()
-
-  // uncomment if you use API Platform Admin (composer req api-admin)
-  //.enableReactPreset()
-  //.addEntry('admin', './assets/js/admin.js')
-
   .copyFiles({
     from: './assets/images',
 
@@ -91,5 +84,11 @@ Encore
     pattern: /\.(png|svg)$/
   })
 ;
+
+if (Encore.isProduction()) {
+  // Note the '/build' at the end of the URL
+  Encore.setPublicPath('https://portfolio-dev-eu-west-3-6rwlxnj8r9.s3.eu-west-3.amazonaws.com/build');
+  Encore.setManifestKeyPrefix('build/');
+}
 
 module.exports = Encore.getWebpackConfig();
