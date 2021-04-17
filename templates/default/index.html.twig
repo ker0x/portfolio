@@ -4,12 +4,12 @@
 
 {% block body %}
     <div class="content">
-        <div class="top">
+        <div class="flex justify-center">
             <a id="github" href="https://github.com/ker0x" title="{{ 'social.github'|trans }}" target="_blank">
                 {{ icons.github }}
             </a>
         </div>
-        <div class="middle">
+        <div class="flex justify-between">
             <a id="linkedin" href="https://www.linkedin.com/in/romain-monteil-a30825b6"
                title="{{ 'social.linkedin'|trans }}" target="_blank">
                 {{ icons.linkedin }}
@@ -22,12 +22,11 @@
                 {{ icons.instagram }}
             </a>
         </div>
-        <div class="bottom">
+        <div class="flex justify-center">
             <a id="facebook" href="https://www.facebook.com/romain.monteil" title="{{ 'social.facebook'|trans }}"
                target="_blank">
                 {{ icons.facebook }}
             </a>
-
         </div>
     </div>
 {% endblock %}
