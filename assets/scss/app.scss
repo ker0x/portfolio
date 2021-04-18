@@ -1,8 +1,10 @@
-// reboot
-@import "~bootstrap/scss/bootstrap-reboot";
+// tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-// variables
-@import "variables";
-
-// core
-@import "core";
+@layer components {
+  .content > div > a {
+    @apply w-12 h-12 flex items-center justify-center rounded-full transition duration-700 m-1 hover:bg-indigo-600
+  }
+}

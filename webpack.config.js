@@ -6,6 +6,9 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
   Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
 }
 
+// Manually define `process.env.NODE_ENV`, since Webpack doesn't do it by default.
+process.env.NODE_ENV = process.env.NODE_ENV || (Encore.isProduction() ? 'production' : 'development');
+
 Encore
   // directory where compiled assets will be stored
   .setOutputPath('public/build/')
@@ -71,12 +74,11 @@ Encore
   // uncomment if you're having problems with a jQuery plugin
   //.autoProvidejQuery()
 
-  // uncomment if you're having problems with a jQuery plugin
-  //.autoProvidejQuery()
-
-  // uncomment if you use API Platform Admin (composer req api-admin)
-  //.enableReactPreset()
-  //.addEntry('admin', './assets/js/admin.js')
+  .enablePostCssLoader((options) => {
+    options.postcssOptions = {
+      path: './postcss.config.js'
+    }
+  })
 
   .copyFiles({
     from: './assets/images',
