@@ -10,13 +10,10 @@ use Twig\Extension\RuntimeExtensionInterface;
 
 final class AppRuntime implements RuntimeExtensionInterface
 {
-    private UrlGeneratorInterface $urlGenerator;
-    private string $secret;
-
-    public function __construct(UrlGeneratorInterface $urlGenerator, string $secret)
-    {
-        $this->urlGenerator = $urlGenerator;
-        $this->secret = $secret;
+    public function __construct(
+        private UrlGeneratorInterface $urlGenerator,
+        private string $secret
+    ) {
     }
 
     public function generateAssetUrl(string $path, array $parameters = [], int $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH): string

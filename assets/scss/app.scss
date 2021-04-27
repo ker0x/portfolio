@@ -4,7 +4,67 @@
 @tailwind utilities;
 
 @layer components {
-  .content > div > a {
-    @apply w-12 h-12 flex items-center justify-center rounded-full transition duration-700 m-1 hover:bg-indigo-600
+  .home {
+    @apply h-screen grid grid-cols-3;
+    grid-template-areas:
+      "me twitter spotify"
+      "github github linkedin"
+      "tmdb instagram about";
+  }
+
+  // Cards
+  .card {
+    @apply relative flex justify-center items-center;
+
+    &-me {
+      @apply bg-red-pixine;
+      grid-area: me;
+    }
+
+    &-twitter {
+      @apply bg-blue-twitter;
+      grid-area: twitter;
+    }
+
+    &-spotify {
+      @apply bg-green-spotify;
+      grid-area: spotify;
+    }
+
+    &-github {
+      @apply bg-gray-900 col-span-2;
+      grid-area: github;
+    }
+
+    &-linkedin {
+      @apply bg-blue-linkedin;
+      grid-area: linkedin;
+    }
+
+    &-tmdb {
+      @apply bg-yellow-imdb;
+      grid-area: tmdb;
+    }
+
+    &-instagram {
+      @apply bg-red-instagram;
+      grid-area: instagram;
+    }
+
+    &-about {
+      @apply bg-purple-700;
+      grid-area: about;
+    }
+  }
+
+  // Links
+  .stretched-link::after {
+    @apply absolute inset-0 z-1;
+    content: "";
+  }
+
+  // Icons
+  .icon {
+    @apply w-32 h-32 fill-current text-white
   }
 }

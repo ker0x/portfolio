@@ -13,13 +13,10 @@ final class GithubService
 {
     private const LOGIN = 'ker0x';
 
-    private CacheInterface $cache;
-    private HttpClientInterface $client;
-
-    public function __construct(CacheInterface $cache, HttpClientInterface $githubClient)
-    {
-        $this->cache = $cache;
-        $this->client = $githubClient;
+    public function __construct(
+        private CacheInterface $cache,
+        private HttpClientInterface $githubClient,
+    ) {
     }
 
     /**
@@ -28,45 +25,45 @@ final class GithubService
     public function getPinnedRepositories(): array
     {
         $query = <<<'QUERY'
-query getPinnedRepositories (
-    $login: String!
-) {
-    user (
-        login: $login
-    ) {
-        pinnedItems(
-            first: 6,
-            types: [REPOSITORY]
-        ) {
-            nodes {
-                ... on Repository {
-                    id
-                    name
-                    description
-                    descriptionHTML
-                    forkCount
-                    stargazerCount
-                    url
-                    languages(
-                        first: 10
+            query getPinnedRepositories (
+                $login: String!
+            ) {
+                user (
+                    login: $login
+                ) {
+                    pinnedItems(
+                        first: 6,
+                        types: [REPOSITORY]
                     ) {
                         nodes {
-                            id
-                            name
-                            color
+                            ... on Repository {
+                                id
+                                name
+                                description
+                                descriptionHTML
+                                forkCount
+                                stargazerCount
+                                url
+                                languages(
+                                    first: 10
+                                ) {
+                                    nodes {
+                                        id
+                                        name
+                                        color
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
-        }
-    }
-}
-QUERY;
+            QUERY;
 
         return $this->cache->get('github_pinned_repositories', function (ItemInterface $item) use ($query) {
             $item->expiresAfter(60 * 60);
 
-            $response = $this->client->request(Request::METHOD_POST, '/graphql', [
+            $response = $this->githubClient->request(Request::METHOD_POST, '/graphql', [
                 'json' => [
                     'query' => $query,
                     'variables' => json_encode(['login' => self::LOGIN], JSON_THROW_ON_ERROR),
