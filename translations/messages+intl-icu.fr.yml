@@ -1,7 +1,4 @@
 app.title: 'Romain Monteil | Portfolio'
 app.meta.description: 'Développeur, gamer, cinéphile et amateur de post-rock !'
-social.facebook: Facebook
-social.twitter: Twitter
-social.instagram: Instagram
-social.github: Github
-social.linkedin: Linkedin
+app.github.index.repositories.empty: 'Attendez... où sont mes dépôts 😱 ???'
+app.home.index.tweets.empty: "Il semblerai qu'il n'y ait pas de tweets ici 🤨 !"

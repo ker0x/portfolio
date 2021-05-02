@@ -28,5 +28,5 @@ yarn-error.log
 
 ###> kerox/portfolio ###
 /build/
-/.php_cs.cache
+/php.ini
 ###< kerox/portfolio ###

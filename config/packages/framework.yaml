@@ -23,7 +23,13 @@ framework:
                 base_uri: 'https://api.github.com'
                 headers:
                     Accept: 'application/vnd.github.v4+json'
-                    Authorization: 'bearer %env(GITHUB_ACCESS_TOKEN)%'
+                    Authorization: 'Bearer %env(GITHUB_ACCESS_TOKEN)%'
+
+            twitter_client:
+                base_uri: 'https://api.twitter.com'
+                headers:
+                    Accept: 'application/json'
+                    Authorization: 'Bearer %env(TWITTER_BEARER_TOKEN)%'
 
 when@test:
     framework:

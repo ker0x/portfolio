@@ -2,26 +2,20 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\Github;
+namespace App\Controller;
 
 use App\Service\GithubService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route(path: '/github', name: 'app_github_index')]
-final class IndexController extends AbstractController
+#[Route(path: '/github', name: 'app_github')]
+final class GithubController extends AbstractController
 {
     public function __invoke(GithubService $githubService): Response
     {
-        try {
-            $repositories = $githubService->getPinnedRepositories();
-        } catch (\Exception) {
-            $repositories = [];
-        }
-
         $response = $this->render('github/index.html.twig', [
-            'repositories' => $repositories,
+            'repositories' => $githubService->getPinnedRepositories(),
         ]);
         $response->setSharedMaxAge(3600);
 

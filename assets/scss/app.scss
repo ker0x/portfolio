@@ -57,6 +57,23 @@
     }
   }
 
+  // Repositories
+  .repo {
+    @apply flex;
+
+    &-title {
+      @apply block text-lg leading-6 font-semibold text-gray-900 mb-2;
+    }
+
+    &-language {
+      @apply flex items-center mt-2;
+
+      &-puce {
+        @apply rounded-full w-4 h-4 mr-1;
+      }
+    }
+  }
+
   // Links
   .stretched-link::after {
     @apply absolute inset-0 z-1;
@@ -65,6 +82,10 @@
 
   // Icons
   .icon {
-    @apply w-32 h-32 fill-current text-white
+    @apply fill-current text-white;
+
+    &-lg {
+      @apply w-32 h-32;
+    }
   }
 }
