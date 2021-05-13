@@ -16,12 +16,12 @@ final class AppRuntime implements RuntimeExtensionInterface
     ) {
     }
 
-    public function generateAssetUrl(string $path, array $parameters = [], int $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH): string
+    public function getImageUrl(string $path, array $parameters = [], int $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH): string
     {
         $parameters['fm'] = 'pjpg';
         $parameters['s'] = SignatureFactory::create($this->secret)->generateSignature($path, $parameters);
         $parameters['path'] = ltrim($path, '/');
 
-        return $this->urlGenerator->generate('app_asset_image', $parameters, $referenceType);
+        return $this->urlGenerator->generate('app_image', $parameters, $referenceType);
     }
 }

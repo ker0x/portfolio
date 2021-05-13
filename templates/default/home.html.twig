@@ -3,9 +3,11 @@
 {% block body %}
     <main class="home">
         <section class="card card-me">
-            <svg class="icon icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" role="img">
-                <use xlink:href="{{ asset('build/images/svg/icons.svg#bands_in_town') }}"></use>
-            </svg>
+            <a class="stretched-link" href="{{ path('app_me') }}" title="Me">
+                <svg class="icon icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" role="img">
+                    <use xlink:href="{{ asset('build/images/svg/icons.svg#bands_in_town') }}"></use>
+                </svg>
+            </a>
         </section>
         <section class="card card-twitter">
             <a class="stretched-link" href="https://twitter.com/ker0x" title="Twitter" target="_blank">
@@ -13,7 +15,9 @@
                     <use xlink:href="{{ asset('build/images/svg/icons.svg#twitter') }}"></use>
                 </svg>
             </a>
-            <p class="absolute inset-0 hidden hover:flex">{{ 'app.home.index.tweets.empty'|trans }}</p>
+            <div class="absolute inset-0 bg-black bg-opacity-25 flex justify-center items-center">
+                <p class="p-10 text-white border rounded border-white">{{ 'app.home.tweets.empty'|trans }}</p>
+            </div>
         </section>
         <section class="card card-spotify">
             <svg class="icon icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -47,9 +51,11 @@
             </a>
         </section>
         <section class="card card-about">
-            <svg class="icon icon-lg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
-                <use xlink:href="{{ asset('build/images/svg/icons.svg#github_sponsor') }}"></use>
-            </svg>
+            <a class="stretched-link" href="{{ path('app_about') }}" title="About">
+                <svg class="icon icon-lg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                    <use xlink:href="{{ asset('build/images/svg/icons.svg#github_sponsor') }}"></use>
+                </svg>
+            </a>
         </section>
     </main>
 {% endblock %}

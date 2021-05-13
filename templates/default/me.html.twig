@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main class="h-screen grid grid-cols-3 gap-4">
+        <div class="bg-red-pixine flex justify-center items-center" style="clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%)">
+            <svg class="icon icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" role="img">
+                <use xlink:href="{{ asset('build/images/svg/icons.svg#bands_in_town') }}"></use>
+            </svg>
+        </div>
+        <div class="col-span-2 flex justify-center items-center p-10">
+            <img src="{{ asset('build/images/romain_alt.png') }}" alt="Me" width="128" height="128">
+            <p>{{ 'app.me.presentation'|trans }}</p>
+        </div>
+    </main>
+{% endblock %}

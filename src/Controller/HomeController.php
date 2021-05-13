@@ -16,7 +16,7 @@ final class HomeController extends AbstractController
     public function __invoke(
         TwitterService $twitterService,
     ): Response {
-        $response = $this->render('default/index.html.twig', [
+        $response = $this->render('default/home.html.twig', [
             'tweets' => $twitterService->getTimeline(),
         ]);
         $response->setSharedMaxAge(3600);

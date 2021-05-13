@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\Asset;
+namespace App\Controller;
 
 use League\Flysystem\FilesystemOperator;
 use League\Glide\Responses\SymfonyResponseFactory;
@@ -17,12 +17,12 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Cache(maxage=900, smaxage=900)
  */
-#[Route(path: '/asset/images/{path}', name: 'app_asset_image', requirements: ['path' => '.+'], methods: ['GET'])]
+#[Route(path: '/images/{path}', name: 'app_image', requirements: ['path' => '.+'], methods: ['GET'])]
 final class ImageController extends AbstractController
 {
     public function __construct(
-        private FilesystemOperator  $defaultStorage,
-        private FilesystemOperator  $cacheStorage
+        private FilesystemOperator $defaultStorage,
+        private FilesystemOperator $cacheStorage
     ) {
     }
 

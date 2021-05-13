@@ -12,7 +12,7 @@ final class AppExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('app_asset_image', [AppRuntime::class, 'generateAssetUrl']),
+            new TwigFunction('image_url', [AppRuntime::class, 'getImageUrl']),
         ];
     }
 }

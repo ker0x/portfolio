@@ -12,12 +12,11 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 final class GithubService
 {
-    private const LOGIN = 'ker0x';
-
     public function __construct(
         private CacheInterface $cache,
         private HttpClientInterface $githubClient,
         private LoggerInterface $logger,
+        private string $githubUsername,
     ) {
     }
 
@@ -69,7 +68,7 @@ final class GithubService
                 $response = $this->githubClient->request(Request::METHOD_POST, '/graphql', [
                     'json' => [
                         'query' => $query,
-                        'variables' => json_encode(['login' => self::LOGIN], JSON_THROW_ON_ERROR),
+                        'variables' => json_encode(['login' => $this->githubUsername], JSON_THROW_ON_ERROR),
                     ],
                 ]);
 

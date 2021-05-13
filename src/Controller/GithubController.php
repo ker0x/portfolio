@@ -14,7 +14,7 @@ final class GithubController extends AbstractController
 {
     public function __invoke(GithubService $githubService): Response
     {
-        $response = $this->render('github/index.html.twig', [
+        $response = $this->render('default/github.html.twig', [
             'repositories' => $githubService->getPinnedRepositories(),
         ]);
         $response->setSharedMaxAge(3600);

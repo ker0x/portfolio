@@ -1,4 +1,5 @@
 app.title: 'Romain Monteil | Portfolio'
 app.meta.description: 'Développeur, gamer, cinéphile et amateur de post-rock !'
-app.github.index.repositories.empty: 'Attendez... où sont mes dépôts 😱 ???'
-app.home.index.tweets.empty: "Il semblerai qu'il n'y ait pas de tweets ici 🤨 !"
+app.github.repositories.empty: 'Attendez... où sont mes dépôts 😱 ???'
+app.home.tweets.empty: "Il semblerai qu'il n'y ait pas de tweets ici 🤨 !"
+app.me.presentation: 'Développeur, gamer, cinéphile et amateur de post-rock !'
