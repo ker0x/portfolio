@@ -14,10 +14,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Cache(maxage=900, smaxage=900)
- */
-#[Route(path: '/images/{path}', name: 'app_image', requirements: ['path' => '.+'], methods: ['GET'])]
+#[Route(path: '/images/{path}', name: 'app_image', requirements: ['path' => '.+'], methods: [Request::METHOD_GET])]
+#[Cache(maxage: 900, smaxage: 900)]
 final class ImageController extends AbstractController
 {
     public function __construct(
