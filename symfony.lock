@@ -196,6 +196,9 @@
     "symfony/polyfill-php80": {
         "version": "v1.22.0"
     },
+    "symfony/polyfill-php81": {
+        "version": "v1.23.0"
+    },
     "symfony/profiler-pack": {
         "version": "v1.0.5"
     },
@@ -212,6 +215,9 @@
             "config/packages/routing.yaml",
             "config/routes.yaml"
         ]
+    },
+    "symfony/runtime": {
+        "version": "v5.3.3"
     },
     "symfony/service-contracts": {
         "version": "v2.2.0"
